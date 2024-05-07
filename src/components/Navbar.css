@@ -1,0 +1,29 @@
+.swal-title {
+    font-size: 1.2em;
+  }
+  
+  .swal-text {
+    font-size: 0.8em; 
+  }
+  
+  @media (max-width: 768px) {
+    .swal-image {
+      width: 200px; 
+    }
+    .swal-text {
+      font-size: 0.6em;
+    }
+  }
+
+  .formatted-text .swal2-html-container {
+    text-align: justify;
+    font-size: 0.9rem; /* Ajusta el tamaño del texto para mejorar la legibilidad */
+    line-height: 1.5; /* Mejora el espaciado entre líneas */
+  }
+  
+  @media (max-width: 768px) {
+    .formatted-text .swal2-html-container {
+      font-size: 0.8rem; /* Texto más pequeño en dispositivos móviles */
+    }
+  }
+  
