@@ -1,5 +1,11 @@
   import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
 
+  import btcImage from '../assets/btc.png';
+  import usdtImage from '../assets/usdt.png';
+  import ethImage from '../assets/eth.png';
+  import usdcImage from '../assets/usdc.png';
+  
+
   export const navLinks = [
     {
       id: "home",
@@ -23,33 +29,30 @@
   export const features = [
     {
       id: "feature-1",
-      icon: star,
+      icon: btcImage,
       title: "BTC",
-      content:
-        "Primera criptomoneda, ideal para inversores que buscan estabilidad y reconocimiento.",
+      content: "Primera criptomoneda, ideal para inversores que buscan estabilidad y reconocimiento.",
     },
     {
       id: "feature-2",
-      icon: star,
+      icon: usdtImage,
       title: "USDT",
-      content:
-        "Criptomoneda estable vinculada al dólar, garantiza seguridad en transacciones.",
+      content: "Criptomoneda estable vinculada al dólar, garantiza seguridad en transacciones.",
     },
     {
       id: "feature-3",
-      icon: star,
+      icon: ethImage,
       title: "ETH",
-      content:
-        "Plataforma líder para contratos inteligentes y desarrollos descentralizados.",
+      content: "Plataforma líder para contratos inteligentes y desarrollos descentralizados.",
     },
     {
-      id: "feature-3",
-      icon: star,
+      id: "feature-4",
+      icon: usdcImage,
       title: "USDC",
-      content:
-        "Estable, segura y completamente respaldada por dólares; ideal para inversores cautelosos.",
+      content: "Estable, segura y completamente respaldada por dólares; ideal para inversores cautelosos.",
     },
   ];
+  
 
   //¿porque activos digitales?
   export const feedback = [
@@ -87,7 +90,7 @@
     },
     {
       id: "stats-2",
-      title: "Desarrollo y comercio",
+      title: "Comercio",
       value: "+",
     },
     {

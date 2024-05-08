@@ -12,7 +12,6 @@ import './Navbar.css'
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
-  
 
   // Configuración de las rutas y acciones para cada enlace del menú
   const linkRoutes = {
@@ -100,9 +99,10 @@ const Navbar = () => {
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-     <img src={logo2} alt="Logo 2" className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]" />
-  <img src={logo} alt="Logo" className="w-[180px] h-[65px] sm:w-[220px] sm:h-[80px]" />
-  {/* Additional navbar content */}
+      <img src={logo2} alt="Logo" className="w-[100px] h-[100px]" />
+      <img src={logo} alt="Logo" className="w-[220px] h-[80px]" />
+      
+
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {Object.entries(linkRoutes).map(([title, { path, external }], index) => (
           <li

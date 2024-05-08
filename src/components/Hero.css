@@ -1,0 +1,27 @@
+@keyframes text-glow {
+    0%, 100% {
+      text-shadow: none;
+    }
+    50% {
+      text-shadow: 0 0 8px rgba(14, 131, 240, 0.8), 0 0 16px rgba(4, 247, 255, 0.603);
+    }
+  }
+  
+  .paragraph-glow {
+    animation: text-glow 10s ease-in-out infinite;
+  }
+  
+
+  @keyframes zoom-in-out {
+    0%, 100% {
+      transform: scale(1); /* La imagen comienza y termina en su tamaño normal */
+    }
+    50% {
+      transform: scale(1.05); /* La imagen se agranda ligeramente en el punto medio de la animación */
+    }
+  }
+  
+  .img-zoom {
+    animation: zoom-in-out 10s infinite ease-in-out; /* La animación se repite infinitamente con una duración de 10 segundos */
+  }
+  
