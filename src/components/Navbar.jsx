@@ -43,46 +43,108 @@ const Navbar = () => {
           </p> 
           
           <p>De este modo, la <strong>Organización ACTIVOS DIGITALES S.A.S.</strong>, establecida como PROVEEDOR DE SERVICIOS DE ACTIVOS VIRTUALES – PSAV ante la Unidad de Información y Análisis Financiero – UIAF e integrante de un sector de economía transaccional formal de nivel nacional e internacional, cuya misión es la de adherirse al compromiso de Colombia con el GAFILAT - Grupo de Acción Financiera de Latinoamérica, para mitigar los riesgos de LA/FT que se presentan en virtud de las operaciones con AV y las actividades que realizamos los PSAV, destacando la importancia de contar con mecanismos de detección, seguimiento, monitoreo y control mediante la puesta en marcha de un SISTEMA DE AUTOCONTROL Y GESTIÓN DEL RIESGO INTEGRAL DE LAVADO DE ACTIVOS, FINANCIACIÓN DEL TERRORISMO Y FINANCIAMIENTO DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA - SAGRILAFT LA/FT/FPADM.</p><p>Por lo anterior y con ocasión de su naturaleza (PSAV); la <strong>Organización ACTIVOS DIGITALES S.A.S.</strong>, aunque NO está obligada a la implementación de un SISTEMA DE AUTOCONTROL Y GESTIÓN DEL RIESGO INTEGRAL DE LAVADO DE ACTIVOS, FINANCIACIÓN DEL TERRORISMO Y FINANCIAMIENTO DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA - SAGRILAFT LA/FT/FPADM, ha decidido de manera voluntaria implementar dicho sistema, que le permita dar cumplimiento a lo establecido en la Resolución 314 de 2021, del 15 de diciembre de 2021 emanada por la Unidad de Información y Análisis Financiero – UIAF y la Circular_100-000016_de_24_de_diciembre_de_2020 de la Superintendencia de Sociedades.</p>
-          <p>Es así, como la <strong>Organización ACTIVOS DIGITALES S.A.S.</strong>, mediante su MANUAL DEL SISTEMA DE AUTOCONTROL Y GESTIÓN DEL RIESGO INTEGRAL DE LAVADO DE ACTIVOS, FINANCIACIÓN DEL TERRORISMO Y FINANCIAMIENTO DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA - SAGRILAFT LA/FT/FPADM, estableció medidas, procedimientos y protocolos de “PREVENCIÓN y CONTROL” encaminados a evitar que la Organización sea utilizada por sus grupos de interés para dar imagen de legalidad a dineros provenientes de actividades ilícitas o que dichos recursos financien actividades terroristas.</p>`,
+          <p>Es así, como la <strong>Organización ACTIVOS DIGITALES S.A.S.</strong>, mediante su MANUAL DEL SISTEMA DE AUTOCONTROL Y GESTIÓN DEL RIESGO INTEGRAL DE LAVADO DE ACTIVOS, FINANCIACIÓN DEL TERRORISMO Y FINANCIAMIENTO DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA - SAGRILAFT LA/FT/FPADM, estableció medidas, procedimientos y protocolos de “PREVENCIÓN y CONTROL” encaminados a evitar que la Organización sea utilizada por sus grupos de interés para dar imagen de legalidad a dineros provenientes de actividades ilícitas o que dichos recursos financien actividades terroristas.</p>
+          `,
           confirmButtonText: 'Entendido',
           width: '90%',
           customClass: {
             popup: 'formatted-text'
           }
         });
-        
       }
     },
-    "Organigrama": { 
-      path: "", 
-      external: false, 
+    "Organigrama": {
+      path: "",
+      external: false,
       action: () => {
         Swal.fire({
           title: 'Organigrama de ACTIVOS DIGITALES S.A.S.',
           text: 'Visualiza la estructura organizativa de nuestra empresa.',
           imageUrl: organigrama,
-          imageWidth: window.innerWidth > 768 ? 600 : 300,  // Adaptativo según el ancho de la pantalla
+          imageWidth: window.innerWidth > 768 ? '90%' : '300px', // 90% del ancho de la pantalla en desktop
           imageAlt: 'Organigrama',
-          confirmButtonText: 'Cerrar'
+          showCloseButton: true,
+          showCancelButton: true,
+          confirmButtonText: 'Ver en Pantalla Completa',
+          cancelButtonText: 'Cerrar',
+          reverseButtons: true,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Crear un nuevo elemento de imagen para mostrar en pantalla completa
+            let img = new Image();
+            img.src = organigrama;
+            img.style.width = '90%'; // Ancho al 90% para evitar distorsión
+            img.style.height = 'auto'; // La altura se ajusta automáticamente
+            img.style.maxHeight = '100vh'; // Altura máxima de la ventana gráfica
+            img.onload = () => {
+              // Crear un contenedor para la imagen
+              let div = document.createElement('div');
+              div.style.position = 'fixed';
+              div.style.left = '0';
+              div.style.top = '0';
+              div.style.width = '100%';
+              div.style.height = '100vh';
+              div.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+              div.style.zIndex = '9999';
+              div.style.display = 'flex';
+              div.style.justifyContent = 'center';
+              div.style.alignItems = 'center';
+              div.appendChild(img);
+              
+              // Crear un botón de cierre
+              let closeButton = document.createElement('button');
+              closeButton.innerText = 'X';
+              closeButton.style.position = 'absolute';
+              closeButton.style.top = '20px';
+              closeButton.style.right = '20px';
+              closeButton.style.zIndex = '10000';
+              closeButton.style.background = 'none';
+              closeButton.style.border = 'none';
+              closeButton.style.color = 'white';
+              closeButton.style.fontSize = '30px';
+              closeButton.style.cursor = 'pointer';
+              
+              // Agregar evento para cerrar la imagen en pantalla completa
+              closeButton.addEventListener('click', () => {
+                document.body.removeChild(div);
+              });
+              
+              div.appendChild(closeButton);
+              
+              // Agregar el contenedor al cuerpo del documento
+              document.body.appendChild(div);
+            };
+          }
         });
       }
     },
+    
+    
     "Contacto": { 
       path: "https://wa.link/tsh6bx", 
       external: true
     },
     "Exchange": { path: "https://intermoneycambios.com/", external: true }
   };
+  
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Esto hará que el desplazamiento sea suave
+    });
+  };
 
   const handleLinkClick = (title, linkInfo) => {
     setActive(title);
-    if (linkInfo.external) {
+    if (title === "Home") {
+      scrollToTop();
+    } else if (linkInfo.external) {
       window.open(linkInfo.path, "_blank");
     } else if (linkInfo.action) {
       linkInfo.action();
     }
   };
-
 
   const specialLinkStyle = "border-2 border-gold-500 rounded-lg p-1";
 

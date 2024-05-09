@@ -106,23 +106,23 @@
       links: [
         {
           name: "Ayuda y Soporte",
-          link: "https://www.hoobank.com/content/",
+          link: "",
         },
         {
           name: "Seguridad Garantizada",
-          link: "https://www.hoobank.com/how-it-works/",
+          link: "",
         },
         {
           name: "Sobre Nosotros",
-          link: "https://www.hoobank.com/create/",
+          link: "",
         },
         {
           name: "Cómo Funciona",
-          link: "https://www.hoobank.com/explore/",
+          link: "",
         },
         {
           name: "Compromiso Seguro",
-          link: "https://www.hoobank.com/terms-and-services/",
+          link: "",
         },
       ],
     },
@@ -131,23 +131,17 @@
       links: [
         {
           name: "Luna Coworking",
-          link: "https://www.hoobank.com/help-center/",
+          link: "https://lunacoworking.co/",
         },
         {
           name: "Bitppi",
-          link: "https://www.hoobank.com/partners/",
+          link: "https://bitppi.com/",
         },
-        {
-          name: "Finanzas en la Luna",
-          link: "https://www.hoobank.com/suggestions/",
-        },
-        {
-          name: "Blog",
-          link: "https://www.hoobank.com/blog/",
-        },
+ 
+    
         {
           name: "Crypto Luna",
-          link: "https://www.hoobank.com/newsletters/",
+          link: "https://cryptolunamasterclass.online/",
         },
       ],
     },
