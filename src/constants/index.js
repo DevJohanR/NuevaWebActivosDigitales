@@ -156,12 +156,9 @@
       links: [
         {
           name: "WhatsApp",
-          link: "https://www.hoobank.com/our-partner/",
+          link: "https://wa.link/tsh6bx",
         },
-        {
-          name: "Ubicación",
-          link: "https://www.hoobank.com/become-a-partner/",
-        },
+     
       ],
     },
   ];

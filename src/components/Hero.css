@@ -24,4 +24,6 @@
   .img-zoom {
     animation: zoom-in-out 10s infinite ease-in-out; /* La animación se repite infinitamente con una duración de 10 segundos */
   }
-  
+  .ctaW{
+    padding-top: 20px;
+  }

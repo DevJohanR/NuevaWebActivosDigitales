@@ -14,8 +14,7 @@ const CardDeal = () => (
         Activos Digitales <br className="sm:block hidden" /> Para Comerciantes
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-      Con Bitppi, nuestra revolucionaria pasarela de pago, convertimos tus criptomonedas en pesos de forma segura y eficiente, facilitando la manera de comprar para tus clientes al permitirles comprar
-      tus productos con un medio de pago alternativo.
+      Con Bitppi, ofrece tus productos y servicios a tus clientes en cualquier parte del mundo. Recibe pagos en criptomonedas y obtén tu pago directamente en tu cuenta bancaria en minutos, sin preocuparte por la volatilidad de las criptomonedas.
       </p>
 
       <Button styles="mt-10" onClick={handleButtonClick} />

@@ -6,8 +6,8 @@ import './Business.css'
 
 const FeatureCard = ({ icon, title, content, index }) => (
   <div className={`flex flex-row p-6 rounded-[20px] ${index !== features.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
-    <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} overflow-hidden relative border-2 border-blue-500`}>
-      <img src={icon} alt={title} className="w-full h-full object-contain" />
+    <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} overflow-hidden relative gradient-border`}>
+      <img src={icon} alt={title} className="w-full h-full object-contain rounded-full" />
     </div>
     <div className="flex-1 flex flex-col ml-3">
       <h4 className="font-poppins font-semibold text-white text-[18px] leading-[23.4px] mb-1">
@@ -19,6 +19,7 @@ const FeatureCard = ({ icon, title, content, index }) => (
     </div>
   </div>
 );
+
 
 
 

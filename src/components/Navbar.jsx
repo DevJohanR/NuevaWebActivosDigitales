@@ -68,23 +68,8 @@ const Navbar = () => {
       }
     },
     "Contacto": { 
-      path: "", 
-      external: false, 
-      action: () => {
-        Swal.fire({
-          title: 'Información de Contacto',
-          imageUrl: local,
-          imageWidth: window.innerWidth > 768 ? 400 : 300,  // Ajuste de tamaño de imagen
-          imageAlt: 'Local de ACTIVOS DIGITALES S.A.S.',
-          html: `
-            <p><strong>Dirección:</strong> CALLE 9 6-43 LOCAL 042 CENTRO</p>
-            <p><strong>Teléfono:</strong> +573208289705</p>
-            <p><strong>Correo:</strong> activos@digitales.cc</p>
-          `,
-          confirmButtonText: 'Cerrar',
-          width: '90%'
-        });
-      }
+      path: "https://wa.link/tsh6bx", 
+      external: true
     },
     "Exchange": { path: "https://intermoneycambios.com/", external: true }
   };
@@ -98,55 +83,59 @@ const Navbar = () => {
     }
   };
 
+
+  const specialLinkStyle = "border-2 border-gold-500 rounded-lg p-1";
+
   return (
-    <nav className="w-full flex py-6 justify-between items-center navbar">
-     <img src={logo2} alt="Logo 2" className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]" />
-  <img src={logo} alt="Logo" className="w-[180px] h-[65px] sm:w-[220px] sm:h-[80px]" />
-  {/* Additional navbar content */}
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full flex py-6 items-center justify-center bg-black">
+    <div className="flex items-center justify-between w-full max-w-7xl px-1">
+      <div className="flex items-center">
+        <img src={logo2} alt="Logo 2" className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px]" />
+        <img src={logo} alt="Logo" className="w-[180px] h-[65px] sm:w-[220px] sm:h-[80px]" />
+      </div>
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {Object.entries(linkRoutes).map(([title, { path, external }], index) => (
           <li
             key={index}
             className={`font-poppins font-normal cursor-pointer text-[16px] ${
               active === title ? "text-white" : "text-dimWhite"
-            } ${index === Object.keys(linkRoutes).length - 1 ? "mr-0" : "mr-10"}`}
+            } ${index === Object.keys(linkRoutes).length - 1 ? "mr-0" : "mr-10"} ${
+              title === "Exchange" ? specialLinkStyle : ""
+            }`}
             onClick={() => handleLinkClick(title, linkRoutes[title])}
           >
             {external ? <a href={path} target="_blank" rel="noopener noreferrer">{title}</a> : <Link to={path}>{title}</Link>}
           </li>
         ))}
       </ul>
-
-      <div className="sm:hidden flex flex-1 justify-end items-center">
+      <div className="sm:hidden flex justify-end items-center">
         <img
           src={toggle ? close : menu}
           alt="menu"
           className="w-[28px] h-[28px] object-contain"
           onClick={() => setToggle(!toggle)}
         />
-
-        <div
-          className={`${
-            !toggle ? "hidden" : "flex"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
-        >
-          <ul className="list-none flex justify-end items-start flex-1 flex-col">
-            {Object.entries(linkRoutes).map(([title, { path, external }], index) => (
-              <li
-                key={index}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                  active === title ? "text-white" : "text-dimWhite"
-                } ${index === Object.keys(linkRoutes).length - 1 ? "mb-0" : "mb-4"}`}
-                onClick={() => handleLinkClick(title, linkRoutes[title])}
-              >
-                {external ? <a href={path} target="_blank" rel="noopener noreferrer">{title}</a> : <Link to={path}>{title}</Link>}
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
-    </nav>
+      <div className={`${!toggle ? "hidden" : "flex"} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
+        <ul className="list-none flex flex-col justify-end items-start flex-1">
+          {Object.entries(linkRoutes).map(([title, { path, external }], index) => (
+            <li
+              key={index}
+              className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                active === title ? "text-white" : "text-dimWhite"
+              } ${index === Object.keys(linkRoutes).length - 1 ? "mb-0" : "mb-4"}`}
+              onClick={() => handleLinkClick(title, linkRoutes[title])}
+            >
+              {external ? <a href={path} target="_blank" rel="noopener noreferrer">{title}</a> : <Link to={path}>{title}</Link>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
   );
 };
+
 
 export default Navbar;

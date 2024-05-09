@@ -2,6 +2,7 @@ import styles from "../style";
 import { discount, robot } from "../assets";
 import GetStarted from "./GetStarted";
 import './Hero.css'
+import ButtonBitppi from "./ButtonBitppi";
 
 
 
@@ -36,6 +37,7 @@ const Hero = () => {
         <p className={`${styles.paragraph} paragraph-glow max-w-[470px] mt-5 text-[16px] sm:text-[18px]`}>
           Educación, desarrollo y comercio de criptomonedas. Gracias a nuestra sede física y normativa legal, garantizamos un entorno seguro y profesional para todos nuestros usuarios.
         </p>
+      <div className="ctaW">  < ButtonBitppi/></div>
       </div>
 
       <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>

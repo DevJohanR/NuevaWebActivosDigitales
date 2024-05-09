@@ -34,6 +34,11 @@
   text-fill-color: transparent;
 }
 
+#home{
+ 
+  margin-top: 180px;
+}
+
 .bg-blue-gradient {
   background: linear-gradient(
     157.81deg,
