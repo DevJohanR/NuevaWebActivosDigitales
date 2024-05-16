@@ -19,6 +19,7 @@
     text-align: justify;
     font-size: 0.9rem; /* Ajusta el tamaño del texto para mejorar la legibilidad */
     line-height: 1.5; /* Mejora el espaciado entre líneas */
+   
   }
   
   @media (max-width: 768px) {
@@ -26,3 +27,5 @@
       font-size: 0.8rem; /* Texto más pequeño en dispositivos móviles */
     }
   }
+
+  

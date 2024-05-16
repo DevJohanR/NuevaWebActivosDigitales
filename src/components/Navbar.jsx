@@ -124,7 +124,9 @@ const Navbar = () => {
       path: "https://wa.link/tsh6bx", 
       external: true
     },
-    "Exchange": { path: "https://intermoneycambios.com/", external: true }
+    "Preguntas Frecuentes": { path: "/preguntas", external: false },
+    "Exchange": { path: "https://intermoneycambios.com/", external: true },
+  
   };
   
 

@@ -1,0 +1,20 @@
+.preguntasFrecuentes{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.preguntasFrecuentes h1{
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.renderPreguntas{
+    display: none;
+    width: 500px;
+    background-color: red;
+    
+}

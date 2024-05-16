@@ -2,7 +2,7 @@
 import styles from "./style";
 import { Routes, Route } from 'react-router-dom';
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
-import PanelPages from "./Pages/PanelPages";
+import PreguntasFrecuentes from "./components/PreguntasFrecuentes";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import mariaFoto from "./assets/mariaFoto.jpg"
 
@@ -10,7 +10,7 @@ const App = () => (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-        <Navbar />
+      <Navbar />
       </div>
     </div>
 
@@ -39,8 +39,8 @@ const App = () => (
         </>
       } />
 
-      {/* Ruta para el panel que muestra el componente PanelPages */}
-      <Route path="/panel" element={<PanelPages />} />
+      {/* add + routes here! */}
+   <Route path="/preguntas" element={<PreguntasFrecuentes/>} />
     </Routes>
 
     <FloatingWhatsApp
