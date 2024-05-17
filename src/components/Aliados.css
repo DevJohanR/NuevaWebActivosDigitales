@@ -1,0 +1,17 @@
+.AliadosContainer{
+   
+    height: auto;
+
+    color: wheat;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.AliadosContainer img{
+   
+    width: 220px;
+}

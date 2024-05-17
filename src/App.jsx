@@ -5,6 +5,7 @@ import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testi
 import PreguntasFrecuentesPersonalizadas from "./components/PreguntasFrecuentesPersonalizadas";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import mariaFoto from "./assets/mariaFoto.jpg"
+import Aliados from "./components/Aliados";
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -31,7 +32,7 @@ const App = () => (
               <Billing />
               <CardDeal />
               <Testimonials />
-              <Clients />
+              <Aliados />
               <CTA />
             </div>
           </div>
@@ -40,6 +41,7 @@ const App = () => (
 
       {/* Añadir más rutas aquí */}
       <Route path="/preguntas" element={<PreguntasFrecuentesPersonalizadas/>} />
+      <Route path="/aliados" element={<Aliados/>} />
     </Routes>
 
     {/* Footer presente en todas las rutas */}
