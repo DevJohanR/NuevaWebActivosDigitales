@@ -37,10 +37,10 @@ const PreguntasFrecuentesPersonalizadas = () => {
     }, []);
 
     useEffect(() => {
-        if (isMobile && activeIndex !== null) {
-            document.documentElement.style.setProperty('--dynamic-height', '200vh');
+        if (isMobile) {
+            document.documentElement.style.setProperty('--dynamic-height', activeIndex !== null ? '120vh' : '60vh');
         } else {
-            document.documentElement.style.setProperty('--dynamic-height', '150vh');
+            document.documentElement.style.setProperty('--dynamic-height', activeIndex !== null ? '160vh' : '100vh');
         }
     }, [activeIndex, isMobile]);
 
