@@ -2,7 +2,7 @@
 import styles from "./style";
 import { Routes, Route } from 'react-router-dom';
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
-import PreguntasFrecuentes from "./components/PreguntasFrecuentes";
+import PreguntasFrecuentesPersonalizadas from "./components/PreguntasFrecuentesPersonalizadas";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import mariaFoto from "./assets/mariaFoto.jpg"
 
@@ -10,7 +10,7 @@ const App = () => (
   <div className="bg-primary w-full overflow-hidden">
     <div className={`${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-      <Navbar />
+        <Navbar />
       </div>
     </div>
 
@@ -33,15 +33,21 @@ const App = () => (
               <Testimonials />
               <Clients />
               <CTA />
-              <Footer />
             </div>
           </div>
         </>
       } />
 
-      {/* add + routes here! */}
-   <Route path="/preguntas" element={<PreguntasFrecuentes/>} />
+      {/* Añadir más rutas aquí */}
+      <Route path="/preguntas" element={<PreguntasFrecuentesPersonalizadas/>} />
     </Routes>
+
+    {/* Footer presente en todas las rutas */}
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Footer />
+      </div>
+    </div>
 
     <FloatingWhatsApp
       phoneNumber='+573208289705'

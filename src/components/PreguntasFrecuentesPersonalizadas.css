@@ -1,0 +1,160 @@
+.preguntasFrecuentesPersonalizada {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  
+}
+
+.preguntasFrecuentesPersonalizada h1 {
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.renderPreguntasPrincipal {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+}
+
+.cardPreguntasFrecuentesPersonalizada {
+    margin-top: 20px;
+    padding: 20px;
+    width: 500px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.preguntaPersonalizada, .respuestaPersonalizada {
+    margin: 10px 0;
+}
+
+.preguntaPersonalizada {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.preguntaTexto {
+    flex: 1;
+    text-align: center;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+.resaltadoPersonalizada {
+    font-weight: bold;
+    color: rgb(71, 126, 209);
+    text-transform: uppercase;
+}
+
+.signoInterrogacionPersonalizada {
+    color: rgb(71, 126, 209);
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+/* Ejemplo de estilos únicos para cada pregunta y respuesta */
+.pregunta-0CSS {
+    color: white;
+}
+
+.respuesta-0CSS {
+    color: white;
+}
+
+.pregunta-1CSS {
+    color: white;
+}
+
+.respuesta-1CSS {
+    color: white;
+}
+
+.pregunta-2CSS {
+    color: white;
+}
+
+.respuesta-2CSS {
+    color: white;
+}
+
+.pregunta-3CSS {
+    color: white;
+}
+
+.respuesta-3CSS {
+    color: pink;
+}
+
+/* Agrega más estilos según sea necesario */
+
+/* Estilos adicionales para las listas dentro de las respuestas */
+.respuestaPersonalizada ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.respuestaPersonalizada li {
+    margin-bottom: 10px;
+}
+
+
+@media (max-width:500px) {
+    .preguntasFrecuentesPersonalizada {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .preguntasFrecuentesPersonalizada h1 {
+        font-weight: bolder;
+        font-size: 35px;
+        text-align: center; /* Añadir esta línea para centrar el título */
+    }
+    .renderPreguntasPrincipal {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 18px; /* Ajuste de tamaño de fuente para dispositivos móviles */
+    }
+    .cardPreguntasFrecuentesPersonalizada {
+        margin-top: 20px;
+        padding: 15px;
+        width: 90%; /* Ajuste de ancho para dispositivos móviles */
+        border: 1px solid white;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+    }
+    .preguntaPersonalizada {
+        display: flex;
+        flex-direction: column; /* Cambia a columna para mejor visualización en móviles */
+        align-items: center;
+    }
+    .preguntaTexto {
+        flex: 1;
+        text-align: center;
+        margin-bottom: 10px; /* Espaciado adicional para mejorar la legibilidad */
+    }
+    .icon {
+        margin-left: 0; /* Quita el margen izquierdo */
+    }
+    .signoInterrogacionPersonalizada {
+        font-size: 20px; /* Ajuste de tamaño de fuente para dispositivos móviles */
+    }
+    .respuestaPersonalizada ul {
+        padding-left: 20px; /* Asegura un pequeño margen para listas */
+    }
+}
