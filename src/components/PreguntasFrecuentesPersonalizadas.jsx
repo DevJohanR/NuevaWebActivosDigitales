@@ -40,7 +40,7 @@ const PreguntasFrecuentesPersonalizadas = () => {
         if (isMobile) {
             document.documentElement.style.setProperty('--dynamic-height', activeIndex !== null ? '120vh' : '60vh');
         } else {
-            document.documentElement.style.setProperty('--dynamic-height', activeIndex !== null ? '160vh' : '100vh');
+            document.documentElement.style.setProperty('--dynamic-height', activeIndex !== null ? '160vh' : '112vh');
         }
     }, [activeIndex, isMobile]);
 
