@@ -1,0 +1,95 @@
+:root {
+  --main-bg-color: #0A0A0A; /* Fondo oscuro */
+  --main-text-color: #FFFFFF; /* Texto blanco */
+  --secondary-text-color: #CCCCCC; /* Texto gris claro */
+  --accent-color: #00FF88; /* Color acento */
+  --title-color: #055c98; /* Color de los títulos */
+  --card-bg-color: #1c1c1c; /* Fondo de las tarjetas */
+  --card-border-color: #055c98; /* Borde de las tarjetas */
+}
+
+.containerServicios {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 180px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section {
+  background-color: var(--card-bg-color);
+  border: 3px solid var(--card-border-color);
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 15px;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--title-color);
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .containerServicios {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .paragraph {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .containerServicios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .title {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .paragraph {
+    font-size: 0.9rem;
+  }
+}

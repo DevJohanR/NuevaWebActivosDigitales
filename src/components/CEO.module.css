@@ -1,0 +1,140 @@
+:root {
+  --main-bg-color: #0A0A0A; /* Fondo oscuro */
+  --main-text-color: #FFFFFF; /* Texto blanco */
+  --accent-color: #055c98; /* Color acento */
+  --stat-text-color: #CCCCCC; /* Texto gris claro para estadísticas */
+  --stat-border-color: #055c98; /* Borde azul claro para estadísticas */
+}
+
+/* Keyframes for animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.containerCEO {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 180px;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ceoContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.ceoText {
+  flex: 1;
+  min-width: 250px;
+  text-align: center; /* Centrar el texto en mobile */
+  padding: 20px;
+}
+
+.ceoImage {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.ceoStats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  border-top: 1px solid var(--stat-border-color);
+  padding-top: 20px;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--stat-border-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInUp 0.5s ease-out; /* Añadir animación a las estadísticas */
+}
+
+.statTitle {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin: 10px 0;
+}
+
+.statSubtitle, .statText {
+  color: var(--stat-text-color);
+  margin: 5px 0;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 0;
+ 
+}
+
+@media (max-width: 768px) {
+  .ceoContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .ceoStats {
+    flex-direction: column;
+  }
+
+  .stat {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .paragraph {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+
+  .image {
+    max-width: 90%;
+  }
+}

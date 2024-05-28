@@ -6,6 +6,9 @@ import PreguntasFrecuentesPersonalizadas from "./components/PreguntasFrecuentesP
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
 import mariaFoto from "./assets/mariaFoto.jpg"
 import Aliados from "./components/Aliados";
+import Nosotros from "./components/Nosotros";
+import Servicios from "./components/Servicios";
+import CEO from "./components/CEO";
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -40,6 +43,9 @@ const App = () => (
       } />
 
       {/* Añadir más rutas aquí */}
+      <Route path="/nosotros" element={<Nosotros />} />
+      <Route path="/servicios" element={<Servicios />} />
+      <Route path="/ceo-fundador" element={<CEO />} />
       <Route path="/preguntas" element={<PreguntasFrecuentesPersonalizadas/>} />
       <Route path="/aliados" element={<Aliados/>} />
     </Routes>

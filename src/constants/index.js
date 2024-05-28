@@ -85,17 +85,17 @@
   export const stats = [
     {
       id: "stats-1",
-      title: "Educación",
+      title: "Nosotros",
       value: "+",
     },
     {
       id: "stats-2",
-      title: "Comercio",
+      title: "Servicios",
       value: "+",
     },
     {
       id: "stats-3",
-      title: "Criptomonedas",
+      title: "CEO & FUNDADOR",
       value: "+",
     },
   ];
