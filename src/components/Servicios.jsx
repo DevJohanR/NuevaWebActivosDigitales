@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Servicios.module.css';
 import { FaRegCreditCard, FaUniversity, FaMobileAlt, FaMoneyCheckAlt, FaFileInvoiceDollar, FaGlobe } from 'react-icons/fa';
 
 const Servicios = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.containerServicios}>
       <h1 className={styles.title}>NUESTROS SERVICIOS</h1>

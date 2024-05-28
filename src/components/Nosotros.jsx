@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Nosotros.module.css';
 import { FaEye, FaBullseye } from 'react-icons/fa';
 
 const Nosotros = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.containerNosotros}>
       <h1 className={styles.title}>¿Quienes Somos?</h1>

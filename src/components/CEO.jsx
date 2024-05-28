@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './CEO.module.css';
 import ceoImage from '../assets/Norman.png'; // Asegúrate de que esta ruta es correcta
 import { FaUsers, FaThumbsUp, FaTiktok } from 'react-icons/fa';
 
 const CEO = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.containerCEO}>
       <div className={styles.ceoContent}>
