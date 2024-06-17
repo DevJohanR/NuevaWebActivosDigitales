@@ -9,6 +9,9 @@ import Aliados from "./components/Aliados";
 import Nosotros from "./components/Nosotros";
 import Servicios from "./components/Servicios";
 import CEO from "./components/CEO";
+import FormJuridicos from "./components/FormJuridicos/FormJuridicos";
+import FormPersonas from "./components/FormPersonas/FormPersonas";
+import KYC from "./components/KYC/KYC"
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -48,6 +51,9 @@ const App = () => (
       <Route path="/ceo-fundador" element={<CEO />} />
       <Route path="/preguntas" element={<PreguntasFrecuentesPersonalizadas/>} />
       <Route path="/aliados" element={<Aliados/>} />
+      <Route path="/juridicos" element={<FormJuridicos/>} />
+      <Route path="/personas" element={<FormPersonas/>} />
+      <Route path="/kyc" element={<KYC/>} />
     </Routes>
 
     {/* Footer presente en todas las rutas */}
