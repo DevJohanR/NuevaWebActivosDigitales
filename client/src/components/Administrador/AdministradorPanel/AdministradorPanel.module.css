@@ -1,0 +1,42 @@
+.AdministradorPanel {
+    color: white;
+    margin-top: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  
+  .searchBar {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .resultsContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 800px) {
+    .AdministradorPanel {
+      flex-direction: column;
+    }
+    
+    .resultsContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .resultsContainer > * {
+      margin-bottom: -135px; /* Reduce the space between the elements */
+    }
+  }
+  

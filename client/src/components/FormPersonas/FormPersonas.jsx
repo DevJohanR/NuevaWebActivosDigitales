@@ -28,6 +28,9 @@ const FormPersonas = () => {
         rutPhotoUrl: ''
     });
 
+    const [isProcessing, setIsProcessing] = useState(false);
+
+
     const [cities, setCities] = useState([]);
     const [language, setLanguage] = useState('es');
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -49,27 +52,28 @@ const FormPersonas = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setIsProcessing(true);
+    
         const formData = new FormData();
         for (const key in post) {
             if (post[key]) {
                 formData.append(key, post[key]);
             }
         }
-
+    
         try {
-            const uploadResponse = await axios.post('http://localhost:3000/upload-personas', formData, {
+            const uploadResponse = await axios.post('https://nuevawebactivosdigitales.onrender.com/upload-personas', formData, {
                 headers: {
                     "Content-Type": "multipart/form-data"
                 }
             });
-
+    
             const { ccPhotoUrl, rutPhotoUrl } = uploadResponse.data;
             setImageUrls({ ccPhotoUrl, rutPhotoUrl });
-
+    
             localStorage.setItem('formData', JSON.stringify(post));
             localStorage.setItem('imageUrls', JSON.stringify({ ccPhotoUrl, rutPhotoUrl }));
-
+    
             Swal.fire({
                 title: '¿Haz diligenciado tus datos correctamente?',
                 showCancelButton: true,
@@ -79,7 +83,7 @@ const FormPersonas = () => {
                     setModalIsOpen(true);
                 }
             });
-
+    
         } catch (error) {
             console.error('Error uploading files:', error);
             Swal.fire({
@@ -87,8 +91,11 @@ const FormPersonas = () => {
                 title: 'Error',
                 text: 'Hubo un error al subir las imágenes.',
             });
+        } finally {
+            setIsProcessing(false);
         }
     };
+    
 
     const handleModalSubmit = async () => {
         if (Object.values(acceptPolicies).every(Boolean)) {
@@ -102,7 +109,7 @@ const FormPersonas = () => {
             };
 
             try {
-                const saveResponse = await axios.post('http://localhost:3000/save-personas', finalData);
+                const saveResponse = await axios.post('https://nuevawebactivosdigitales.onrender.com/save-personas', finalData);
                 console.log(saveResponse.data);
 
                 Swal.fire({
@@ -306,9 +313,10 @@ const FormPersonas = () => {
                     ))}
                 </div>
 
-                <button type="submit" className={styles.btnSend}>
-                    {translations[language].enviar}
-                </button>
+                <button type="submit" className={styles.btnSend} disabled={isProcessing}>
+    {isProcessing ? 'Procesando...' : translations[language].enviar}
+</button>
+
             </form>
 
             <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} className={modalStyles.modalContainer}     style={{
@@ -346,7 +354,7 @@ const FormPersonas = () => {
                     </div>
 
                     <p>{language === 'es' ? 'Declaración de origen de fondos' : 'Declaration of Source of Funds'}:</p>
-                    <p>{language === 'es' ? 'Declaro expresamente que: 1. Mi actividad, profesión u oficio es lícita y se ejerce dentro del marco legal y los recursos de la misma no provienen de actividades ilícitas de las contempladas en el Código Penal Colombiano. 2. La información suministrada en este documento es veraz y verificable y me compromete a actualizarla anualmente. 3. Los recursos que se deriven del desarrollo de este contrato no se destinaran a la financiación del terrorismo, grupos terroristas o actividades terroristas. 4. Los recursos que poseo provienen de las actividades descritas anteriormente.' : 'I expressly declare that:1. My activity, profession, or occupation is lawful and exercised within the legal framework, and its resources do not come from illicit activities contemplated in the Colombian Penal Code. 2. The information provided in this document is true and verifiable, and I commit to updating it annually. 3. The resources derived from the execution of this contract will not be used to finance terrorism, terrorist groups, or terrorist activities. 4. The resources I possess come from the activities described above. '} </p>
+                    <p>{language === 'es' ? 'Declaro expresamente que: 1. Mi actividad, profesión u oficio es lícita y se ejerce dentro del marco legal y los recursos de la misma no provienen de actividades ilícitas de las contempladas en el Código Penal Colombiano. 2. La información suministrada en este documento es veraz y verificable y me compromete a actualizarla anualmente. 3. Los recursos que se deriven del desarrollo de este contrato no se destinaran a la financiación del terrorismo, grupos terroristas o actividades terroristas. 4. Los recursos que poseo no provienen de las actividades descritas anteriormente.' : 'I expressly declare that:1. My activity, profession, or occupation is lawful and exercised within the legal framework, and its resources do not come from illicit activities contemplated in the Colombian Penal Code. 2. The information provided in this document is true and verifiable, and I commit to updating it annually. 3. The resources derived from the execution of this contract will not be used to finance terrorism, terrorist groups, or terrorist activities. 4. The resources I possess come from the activities described above. '} </p>
                     <div className={modalStyles.checkboxContainer}>
                         <input
                             type="checkbox"

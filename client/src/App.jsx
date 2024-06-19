@@ -12,6 +12,8 @@ import CEO from "./components/CEO";
 import FormJuridicos from "./components/FormJuridicos/FormJuridicos";
 import FormPersonas from "./components/FormPersonas/FormPersonas";
 import KYC from "./components/KYC/KYC"
+import AdministradorPanel from "./components/Administrador/AdministradorPanel/AdministradorPanel";
+
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -54,6 +56,7 @@ const App = () => (
       <Route path="/juridicos" element={<FormJuridicos/>} />
       <Route path="/personas" element={<FormPersonas/>} />
       <Route path="/kyc" element={<KYC/>} />
+      <Route path="/administrador" element={<AdministradorPanel/>} />
     </Routes>
 
     {/* Footer presente en todas las rutas */}

@@ -20,6 +20,7 @@
     font-weight: 900;
     font-size: 22px;
     height: auto;
+    text-align: center;
 }
 
 .containerPersonas {
@@ -105,3 +106,4 @@ form .btnSend{
     border-radius: 10px;
     font-weight: 700;
 }
+

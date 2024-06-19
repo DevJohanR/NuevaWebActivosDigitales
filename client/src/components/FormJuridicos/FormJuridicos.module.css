@@ -1,8 +1,68 @@
-form{
+.idiomas {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+    flex-direction: column;
+    gap: 20px;
+    
+  
+}
+
+.idiomas button {
+    background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 700;
+   
+}
+
+.idiomas h1 {
+    color: white;
+    font-weight: 900;
+    font-size: 22px;
+    height: auto;
+    text-align: center;
+}
+
+.containerPersonas {
+    display: flex;
+    height: auto;
+    margin-top: 195px;
+    color: white;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+.containerPersonas input,
+.containerPersonas select {
+    border: 1px solid blue;
+    color: black;
+    width: 300px;
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.containerPersonas button {
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    margin-top: 30px;
 }
 
 .uploads {
@@ -10,19 +70,42 @@ form{
     flex-direction: column;
 }
 
-.cc {
+.uploadField {
+    width: 300px;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
+.uploadField label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.uploadField button {
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+
+label {
+    width: 50px;
+}
+
+.cc,
 .rut {
     display: flex;
     gap: 10px;
 }
 
-label{
- 
-    width: 50px;
+form .btnSend {
+    background: linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%);
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 700;
 }
-
-
