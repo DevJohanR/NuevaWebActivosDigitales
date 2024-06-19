@@ -7,7 +7,7 @@ const PreguntasFrecuentes = () => {
     const [error, setError] = useState(null);
 
     useEffect(()=>{
-        const url = "https://miniapi-6flu.onrender.com/preguntas";
+        const url = "https://miniapi-rfqg.onrender.com/preguntas";
         
         fetch(url)
         .then(response =>{

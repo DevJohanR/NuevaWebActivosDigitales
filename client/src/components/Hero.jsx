@@ -63,7 +63,8 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          Educación, desarrollo y comercio de criptomonedas. Gracias a nuestra sede física y normativa legal, garantizamos un entorno seguro y profesional para todos nuestros usuarios.
+         Educación, desarrollo y comercio de activos virtuales. Gracias a nuestra sede física y normativa legal, garantizamos un entorno seguro y profesional para todos nuestros usuarios.
+
         </motion.p>
         <motion.div 
           className="ctaW"

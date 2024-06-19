@@ -30,25 +30,25 @@
     {
       id: "feature-1",
       icon: btcImage,
-      title: "BTC",
-      content: "Primera criptomoneda, ideal para inversores que buscan estabilidad y reconocimiento.",
+      title: "Oro Digital",
+      content: "El primer activo virtual, ideal para inversores que buscan estabilidad y reconocimiento.",
     },
     {
       id: "feature-2",
       icon: usdtImage,
-      title: "USDT",
-      content: "Criptomoneda estable vinculada al dólar, garantiza seguridad en transacciones.",
+      title: "Dólar Virtual",
+      content: "Activo virtual estable vinculado al dólar, que garantiza seguridad en transacciones.",
     },
     {
       id: "feature-3",
       icon: ethImage,
-      title: "ETH",
-      content: "Plataforma líder para contratos inteligentes y desarrollos descentralizados.",
+      title: "Contratos Inteligentes",
+      content: "Solución líder para contratos inteligentes y desarrollos descentralizados.",
     },
     {
       id: "feature-4",
       icon: usdcImage,
-      title: "USDC",
+      title: "Moneda Estable Digital",
       content: "Estable, segura y completamente respaldada por dólares; ideal para inversores cautelosos.",
     },
   ];
@@ -59,18 +59,18 @@
     {
       id: "feedback-1",
       content:
-        "Protegemos tus activos digitales con tecnología de punta y cumplimiento de normativas vigentes",
+        "Protegemos tus activos virtuales con tecnología de punta y cumplimiento de normativas vigentes",
       name: "Seguridad",
       title: "Founder & Leader",
-     // img: people01,
+      // img: people01,
     },
     {
       id: "feedback-2",
       content:
-        "Brindamos formación continua sobre criptomonedas, desde conceptos básicos hasta estrategias avanzadas.",
+        "Brindamos formación continua sobre activos virtuales, desde conceptos básicos hasta estrategias avanzadas.",
       name: "Educación",
       title: "Founder & Leader",
-      //img: people02,
+      // img: people02,
     },
     {
       id: "feedback-3",
@@ -78,10 +78,10 @@
         "Nuestros expertos te guían en cada paso del camino, asegurando una experiencia de inversión superior.",
       name: "Experiencia",
       title: "Founder & Leader",
-      //img: people03,
+      // img: people03,
     },
   ];
-
+  
   export const stats = [
     {
       id: "stats-1",

@@ -49,10 +49,11 @@ const Billing = () => {
 
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
-          Seguridad Legal en <br className="sm:block hidden" /> Cada Transacción Cripto
+        Protección Jurídica en <br className="sm:block hidden" /> Cada Operación de Activos Virtuales
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          Cumplimos con las normativas SAGRILAFT para asegurar la integridad y seguridad de tus transacciones criptográficas. Protegemos tu inversión con los más altos estándares de seguridad del sector.
+        Cumplimos con las normativas SAGRILAFT para asegurar la integridad y seguridad de tus transacciones de activos virtuales. Protegemos tu inversión con los más altos estándares de seguridad del sector.
+
         </p>
 
         <div className="flex flex-row flex-wrap sm:mt-10 mt-6">

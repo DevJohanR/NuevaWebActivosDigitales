@@ -7,7 +7,7 @@ import { SiAuthelia } from "react-icons/si";
 const KYC = () => {
   return (
     <div className={styles.containerKYC}>
-      <Link to = "/administrador">
+      <Link to = "/login">
       <SiAuthelia style={{ color: 'white', fontSize: '48px', marginBottom: '20px' }} />
       </Link>
       <h1>Elige el tipo de KyC que realizaras</h1>
@@ -21,6 +21,7 @@ const KYC = () => {
     <button>Juridicos</button>
     </Link>
     <hr />
+
  
      </div>
 

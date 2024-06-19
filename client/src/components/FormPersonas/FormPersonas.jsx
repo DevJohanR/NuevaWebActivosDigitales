@@ -29,6 +29,7 @@ const FormPersonas = () => {
     });
 
     const [isProcessing, setIsProcessing] = useState(false);
+    
 
 
     const [cities, setCities] = useState([]);
@@ -166,7 +167,7 @@ const FormPersonas = () => {
             telefonoCelular: 'Teléfono celular',
             descripcionOrigenFondos: 'Origen de tus fondos',
             ccPhotoPersonas: 'CC:',
-            rutPhotoPersonas: 'RUT:',
+            rutPhotoPersonas: 'RUT: (Opcional)',
             enviar: 'Enviar',
             selectFile: 'Seleccionar archivo',
             noFileSelected: 'Sin archivos seleccionados',
@@ -199,8 +200,8 @@ const FormPersonas = () => {
             correoElectronico: 'Email',
             telefonoCelular: 'Cellphone',
             descripcionOrigenFondos: 'Source of your funds',
-            ccPhotoPersonas: 'ID',
-            rutPhotoPersonas: 'TAX ID',
+            ccPhotoPersonas: 'ID:',
+            rutPhotoPersonas: 'TAX ID: (Optional)',
             enviar: 'Submit',
             selectFile: 'Select file',
             noFileSelected: 'No files selected',
@@ -244,7 +245,7 @@ const FormPersonas = () => {
                     onChange={handleChange}
                 />
                 <input
-                    type="number"
+                    type="text"
                     placeholder={translations[language].numeroIdentificacion}
                     name='numeroIdentificacion'
                     onChange={handleChange}
@@ -280,7 +281,7 @@ const FormPersonas = () => {
                     onChange={handleChange}
                 />
                 <input
-                    type="number"
+                    type="text"
                     placeholder={translations[language].telefonoCelular}
                     name='telefonoCelular'
                     onChange={handleChange}
@@ -292,26 +293,28 @@ const FormPersonas = () => {
                     onChange={handleChange}
                 />
 
-                <div className={styles.uploads}>
-                    {['ccPhotoPersonas', 'rutPhotoPersonas'].map(field => (
-                        <div key={field} className={styles.uploadField}>
-                            <label htmlFor={field}>{translations[language][field]}</label>
-                            <button type="button" onClick={() => handleFileClick(field)} className={styles.customFileUpload}>
-                                <FaFileUpload /> {translations[language].selectFile}
-                            </button>
-                            <input
-                                type="file"
-                                name={field}
-                                id={field}
-                                onChange={handleChange}
-                                style={{ display: 'none' }}
-                            />
-                            <span className={styles.fileName}>
-                                {post[field] ? post[field].name : translations[language].noFileSelected}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+<div className={styles.uploads}>
+  {['ccPhotoPersonas', 'rutPhotoPersonas'].map(field => (
+    <div key={field} className={styles.uploadField}>
+      <label htmlFor={field}>{translations[language][field]}</label>
+      <button type="button" onClick={() => handleFileClick(field)} className={styles.customFileUpload}>
+        <FaFileUpload /> {translations[language].selectFile}
+      </button>
+      <input
+        type="file"
+        name={field}
+        id={field}
+        onChange={handleChange}
+        required={field !== 'rutPhotoPersonas'} 
+        style={{ display: 'none' }}
+      />
+      <span className={styles.fileName}>
+        {post[field] ? post[field].name : translations[language].noFileSelected}
+      </span>
+    </div>
+  ))}
+</div>
+
 
                 <button type="submit" className={styles.btnSend} disabled={isProcessing}>
     {isProcessing ? 'Procesando...' : translations[language].enviar}

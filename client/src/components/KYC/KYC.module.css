@@ -1,11 +1,12 @@
 .containerKYC{
     height: 30vh;
-    margin-top: 180px;
+    margin-top: 270px;
     flex-direction: column;
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
+    padding-bottom: 100px;
 }
 
 .containerKYC h1{

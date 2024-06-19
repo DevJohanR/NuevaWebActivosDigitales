@@ -1,3 +1,4 @@
+//routes/photos.routes.js
 const { Router } = require('express')
 const { downloadPhoto, uploadPersonas, uploadJuridicos, getPersonas, getJuridicos, savePersonas, listAllImages, saveJuridicos} = require('../controllers/photos.controller');
 
@@ -12,7 +13,7 @@ router.post('/upload-juridicos', uploadJuridicos);
 router.get('/archivo/:fileName', downloadPhoto);
 router.get('/personas', getPersonas);
 router.get('/juridicos', getJuridicos);
-    router.get('/list-images', listAllImages);
+router.get('/list-images', listAllImages);
 
 
 module.exports = router;

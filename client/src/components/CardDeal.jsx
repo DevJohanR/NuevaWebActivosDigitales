@@ -14,8 +14,9 @@ const CardDeal = () => (
         Activos Digitales <br className="sm:block hidden" /> Para Comerciantes
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-      Con Bitppi, ofrece tus productos y servicios a tus clientes en cualquier parte del mundo. Recibe pagos en criptomonedas y obtén tu pago directamente en tu cuenta bancaria en minutos, sin preocuparte por la volatilidad de las criptomonedas.
-      </p>
+  Con Bitppi, ofrece tus productos y servicios a tus clientes en cualquier parte del mundo. Recibe pagos en activos digitales y obtén tu pago directamente en tu cuenta bancaria en minutos, sin preocuparte por la volatilidad de estos activos.
+</p>
+
 
       <Button styles="mt-10" onClick={handleButtonClick} />
     </div>

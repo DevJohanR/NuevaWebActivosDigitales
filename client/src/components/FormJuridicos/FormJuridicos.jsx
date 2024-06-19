@@ -206,7 +206,7 @@ const FormJuridicos = () => {
             cedulaRepresentanteLegal: 'CC REPRESENTANTE LEGAL',
             estadosFinancieros: 'ESTADOS FINANCIEROS',
             certificadoBancario: 'CERTIFICADO BANCARIO',
-            composicionAccionaria: 'COMPOSICION ACCIONARIA',
+            composicionAccionaria: 'COMPOSICION ACCIONARIA (opcional)',
             enviar: 'Enviar',
             selectFile: 'Seleccionar archivo',
             noFileSelected: 'Sin archivos seleccionados',
@@ -245,7 +245,7 @@ const FormJuridicos = () => {
             cedulaRepresentanteLegal: 'Legal Representative ID',
             estadosFinancieros: 'Financial Statements',
             certificadoBancario: 'Bank Certificate',
-            composicionAccionaria: 'Shareholding Composition',
+            composicionAccionaria: 'Shareholding Composition (optional)',
             enviar: 'Submit',
             selectFile: 'Select file',
             noFileSelected: 'No files selected',
@@ -284,15 +284,15 @@ const FormJuridicos = () => {
                     type="text"
                     placeholder={translations[language].nombresCompletos}
                     name="nombresCompletos"
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
                 <input
-                    type="number"
+                    type="text"
                     placeholder={translations[language].numeroIdentificacion}
                     name='numeroIdentificacion'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
-                <select name="tipoIdentificacion" id="tipoIdentificacion" onChange={handleChange}>
+                <select name="tipoIdentificacion" id="tipoIdentificacion" onChange={handleChange} required>
                     <option value="">{translations[language].tipoIdentificacion}</option>
                     {translations[language].options.tipoIdentificacion.map(option => (
                         <option key={option.value} value={option.value}>{option.label}</option>
@@ -302,9 +302,9 @@ const FormJuridicos = () => {
                     type="text"
                     placeholder={translations[language].nacionalidad}
                     name='nacionalidad'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
-                <select name="ciudadResidencia" id="ciudadResidencia" onChange={handleChange}>
+                <select name="ciudadResidencia" id="ciudadResidencia" onChange={handleChange} required>
                     <option value="">{translations[language].ciudadResidencia}</option>
                     {cities.map(city => (
                         <option key={city.id} value={city.name}>{city.name}</option>
@@ -314,47 +314,49 @@ const FormJuridicos = () => {
                     type="text"
                     placeholder={translations[language].direccion}
                     name='direccion'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
                 <input
                     type="email"
                     placeholder={translations[language].correoElectronico}
                     name='correoElectronico'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
                 <input
-                    type="number"
+                    type="text"
                     placeholder={translations[language].telefonoCelular}
                     name='telefonoCelular'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
                 <input
                     type="text"
                     placeholder={translations[language].descripcionOrigenFondos}
                     name='descripcionOrigenFondos'
-                    onChange={handleChange}
+                    onChange={handleChange} required
                 />
 
-                <div className={styles.uploads}>
-                    {['ccPhoto', 'rutPhoto', 'camaraComercio', 'cedulaRepresentanteLegal', 'estadosFinancieros', 'certificadoBancario', 'composicionAccionaria'].map(field => (
-                        <div key={field} className={styles.uploadField}>
-                            <label htmlFor={field}>{translations[language][field]}</label>
-                            <button type="button" onClick={() => handleFileClick(field)} className={styles.customFileUpload}>
-                                <FaFileUpload /> {translations[language].selectFile}
-                            </button>
-                            <input
-                                type="file"
-                                name={field}
-                                id={field}
-                                onChange={handleChange}
-                                style={{ display: 'none' }}
-                            />
-                            <span className={styles.fileName}>
-                                {post[field] ? post[field].name : translations[language].noFileSelected}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+<div className={styles.uploads}>
+  {['ccPhoto', 'rutPhoto', 'camaraComercio', 'cedulaRepresentanteLegal', 'estadosFinancieros', 'certificadoBancario', 'composicionAccionaria'].map(field => (
+    <div key={field} className={styles.uploadField}>
+      <label htmlFor={field}>{translations[language][field]}</label>
+      <button type="button" onClick={() => handleFileClick(field)} className={styles.customFileUpload}>
+        <FaFileUpload /> {translations[language].selectFile}
+      </button>
+      <input
+        type="file"
+        name={field}
+        id={field}
+        onChange={handleChange}
+        required={field !== 'composicionAccionaria'} // Set required for all but 'composicionAccionaria'
+        style={{ display: 'none' }}
+      />
+      <span className={styles.fileName}>
+        {post[field] ? post[field].name : translations[language].noFileSelected}
+      </span>
+    </div>
+  ))}
+</div>
+
 
                 <button type="submit" className={styles.btnSend} disabled={isProcessing}>
     {isProcessing ? 'Procesando...' : translations[language].enviar}

@@ -7,10 +7,11 @@ import { footerLinks, socialMedia } from "../constants";
 const alertMessages = {
   "Ayuda y Soporte": "Si necesitas asistencia o tienes alguna pregunta, no dudes en contactarnos. Estamos aquí para ayudarte en todo momento.",
   "Seguridad Garantizada": "Nuestra plataforma está diseñada con altos estándares de seguridad. Tus activos digitales están protegidos mediante medidas avanzadas de encriptación y autenticación.",
-  "Sobre Nosotros": "Somos una empresa dedicada al mundo de las criptomonedas. Nuestro equipo está formado por expertos en finanzas digitales y estamos comprometidos con brindarte la mejor experiencia.",
-  "Cómo Funciona": "Te explicamos paso a paso cómo operar en nuestra plataforma. Desde la creación de tu cuenta hasta la compra y venta de criptomonedas, te acompañamos en todo el proceso.",
+  "Sobre Nosotros": "Somos una empresa dedicada al mundo de los activos digitales. Nuestro equipo está formado por expertos en finanzas digitales y estamos comprometidos con brindarte la mejor experiencia.",
+  "Cómo Funciona": "Te explicamos paso a paso cómo operar en nuestra plataforma. Desde la creación de tu cuenta hasta la compra y venta de activos digitales, te acompañamos en todo el proceso.",
   "Compromiso Seguro": "Cumplimos con las regulaciones de prevención de lavado de activos y financiación del terrorismo (SARLAFT). Puedes confiar en que tus transacciones están respaldadas por un entorno seguro."
 };
+
 
 // Función para mostrar SweetAlerts
 const showAlert = (name) => {
