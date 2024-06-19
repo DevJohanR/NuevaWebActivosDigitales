@@ -9,7 +9,7 @@ const PreguntasFrecuentesPersonalizadas = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
     useEffect(() => {
-        const url = "https://miniapi-6flu.onrender.com/preguntas";
+        const url = "https://auditoriaactivosdigitalesbackend-pybg.onrender.com/preguntas";
 
         fetch(url)
             .then(response => {
