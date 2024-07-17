@@ -3,6 +3,7 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 const photosRoutes = require('./routes/photos.routes.js')
 const authenticationRoutes = require('./routes/authentication.routes.js')
+const audits = require('./routes/audits.js')
 const cors = require('cors')
 const app = express()
 
@@ -18,6 +19,8 @@ app.use(fileUpload({
 
 app.use(photosRoutes)
 app.use(authenticationRoutes)
+app.use('/api', audits); // Prefijo '/api' para todas las rutas de auditorias
+
 
 app.use(express.static('images'))
 

@@ -4,14 +4,15 @@ import Swal from 'sweetalert2';
 import { FaInfoCircle } from 'react-icons/fa';
 import styles from './Juridicos.module.css';
 
-const Juridicos = ({ searchTerm }) => {
+const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://nuevawebactivosdigitales.onrender.com/juridicos')
+    axios.get('http://localhost:3000/juridicos')
       .then(response => {
+        console.log('Datos Juridicos:', response.data)
         setData(response.data);
         setLoading(false);
       })
@@ -52,7 +53,13 @@ const Juridicos = ({ searchTerm }) => {
         <p><strong>Certificado Bancario:</strong> <a href="${juridico.certificadoBancarioUrl}" target="_blank" rel="noopener noreferrer">Ver Certificado</a></p>
         <p><strong>Composición Accionaria:</strong> <a href="${juridico.composicionAccionariaUrl}" target="_blank" rel="noopener noreferrer">Ver Composición</a></p>
       `,
-      confirmButtonText: 'Cerrar'
+      confirmButtonText: 'Cerrar',
+       showCancelButton: true,
+      cancelButtonText: 'Auditar'
+    }).then((result)=>{
+      if(result.dismiss === Swal.DismissReason.cancel){
+        setSelectedJuridico(juridico);
+      }
     });
   };
 

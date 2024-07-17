@@ -4,14 +4,15 @@ import Swal from 'sweetalert2';
 import { FaInfoCircle } from 'react-icons/fa';
 import styles from './Personas.module.css';
 
-const Personas = ({ searchTerm }) => {
+const Personas = ({ setSelectedUser, searchTerm }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://nuevawebactivosdigitales.onrender.com/personas')
+    axios.get('http://localhost:3000/personas')
       .then(response => {
+        console.log('Datos Personas:', response.data);
         setData(response.data);
         setLoading(false);
       })
@@ -47,8 +48,31 @@ const Personas = ({ searchTerm }) => {
         <p><strong>Foto CC:</strong> <a href="${persona.ccPhotoUrl}" target="_blank" rel="noopener noreferrer">Ver Foto</a></p>
         <p><strong>Foto RUT:</strong> <a href="${persona.rutPhotoUrl}" target="_blank" rel="noopener noreferrer">Ver Foto</a></p>
       `,
-      confirmButtonText: 'Cerrar'
-    });
+      confirmButtonText: 'Cerrar',
+      showCancelButton: true,
+
+      cancelButtonText: 'Auditar'
+      
+    }).then((result)=>{
+      if (result.dismiss === Swal.DismissReason.cancel){
+        console.log('Datos a enviar:', persona)
+
+        fetch('http://localhost:3000/api/auditoria-personas', {
+          method: 'POST',
+          headers:{
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(persona)
+        })
+        .then(response=>response.json())
+        .then(data =>{
+          console.log('Exito', data);
+        })
+        .catch((error)=>{
+          console.error('Error', error)
+        })
+      }
+    })
   };
 
   if (loading) return <div>Cargando...</div>;
