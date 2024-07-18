@@ -58,7 +58,22 @@ const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
       cancelButtonText: 'Auditar'
     }).then((result)=>{
       if(result.dismiss === Swal.DismissReason.cancel){
-        setSelectedJuridico(juridico);
+       console.log('Datos a Enviar --Juridicos:', juridico)
+
+       fetch('http://localhost:3000/api/auditoria-juridicos', {
+        method: 'POST',
+        headers:{
+          'Content-Type' :  'application/json'
+        },
+        body: JSON.stringify(juridico)
+       })
+       .then(response=>response.json())
+       .then(data =>{
+        console.log('Exito', data)
+       })
+       .catch((error)=>{
+        console.error('Error, error')
+       })
       }
     });
   };

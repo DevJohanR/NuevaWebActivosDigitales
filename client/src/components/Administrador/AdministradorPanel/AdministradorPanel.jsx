@@ -27,6 +27,7 @@ const AdministradorPanel = () => {
                 <Personas searchTerm={searchTerm} setSelectedUser={setSelectedUser} />
                 <Juridicos searchTerm={searchTerm} setSelectedJuridico={setSelectedJuridico} />
             </div>
+            
             <Auditoria selectedUser={selectedUser} selectedJuridico={selectedJuridico} />
         </div>
     );

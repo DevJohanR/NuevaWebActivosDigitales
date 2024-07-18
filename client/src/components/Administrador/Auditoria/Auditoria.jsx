@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import styles from './Auditoria.module.css';
 
 const Auditoria = () => {
-  const [personasAuditadas, setPersonasAuditadas] = useState([]);
+const [personasAuditadas, setPersonasAuditadas] = useState([]);
+const [juridicosAuditados, setJuridicosAuditados] = useState([]);
 
+/**/
+//useEffect de Personas
+/**/
   useEffect(() => {
     fetch('http://localhost:3000/api/auditoria-personas', {
       method: 'GET',
@@ -20,6 +24,41 @@ const Auditoria = () => {
       });
   }, []);
 
+
+
+/**/
+//useEffect de Personas
+/**/
+useEffect(() => {
+  fetch('http://localhost:3000/api/auditoria-juridicos', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    } else {
+      return response.json();
+    }
+  })
+  .then(data => {
+    console.log('DATA GET juri', data);
+    setJuridicosAuditados(data);
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+}, []);
+
+/**/
+/**/
+
+
+
+
+  //handle de personas
   const handleVerificationChange = (id, field, value) => {
     const updatedPersonas = personasAuditadas.map(persona => {
       if (persona.id === id) {
@@ -46,6 +85,7 @@ const Auditoria = () => {
       });
   };
 
+  //getEstado de personas
   const getEstado = (persona) => {
     const camposVerificados = [
       'verificarNombresCompletos',
@@ -66,7 +106,9 @@ const Auditoria = () => {
 
   return (
     <div className={styles.Auditoria}>
+      {/* PERSONAS */}
       <div className={styles.tableContainer}>
+        <h1>Auditoria Personas Naturales</h1>
         <table>
           <thead>
             <tr>
@@ -94,7 +136,7 @@ const Auditoria = () => {
                   </button>
                 </td>
                 <td>
-                  {/*persona.nombresCompletos*/}
+                  {persona.nombresCompletos}
                   <select
                     value={persona.verificarNombresCompletos ? "1" : "0"}
                     onChange={(e) => handleVerificationChange(persona.id, 'verificarNombresCompletos', e.target.value === "1")}
@@ -208,6 +250,11 @@ const Auditoria = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      {/* JURIDICOS */}
+      <div className={styles.tableContainer}>
+        <h1>Auditoria Juridicos</h1>
+     
       </div>
     </div>
   );
