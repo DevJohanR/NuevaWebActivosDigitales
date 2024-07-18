@@ -10,7 +10,7 @@ const Personas = ({ setSelectedUser, searchTerm }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/personas')
+    axios.get('https://nuevawebactivosdigitales.onrender.com/personas')
       .then(response => {
         console.log('Datos Personas:', response.data);
         setData(response.data);
@@ -57,7 +57,7 @@ const Personas = ({ setSelectedUser, searchTerm }) => {
       if (result.dismiss === Swal.DismissReason.cancel){
         console.log('Datos a enviar:', persona)
 
-        fetch('http://localhost:3000/api/auditoria-personas', {
+        fetch('https://nuevawebactivosdigitales.onrender.com/api/auditoria-personas', {
           method: 'POST',
           headers:{
             'Content-Type': 'application/json'

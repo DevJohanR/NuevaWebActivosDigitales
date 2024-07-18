@@ -1,6 +1,9 @@
-/* Auditoria.module.css */
 .Auditoria {
-  padding: 20px;
+  padding: 10px; /* Reducir el relleno general */
+}
+
+.Auditoria h1{
+  font-size: 40px;
 }
 
 .Auditoria table {
@@ -8,52 +11,58 @@
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
+  background-color: #ffffff; /* Fondo de la tabla */
+  table-layout: fixed; /* Ancho fijo para las columnas */
 }
 
 .Auditoria th, .Auditoria td {
   border: 1px solid #ddd;
-  padding: 12px; /* Ajustar el padding para un mejor aspecto */
-  text-align: left;
-  color: #ffffff; /* Color del texto */
+  padding: 10px; /* Reducir el relleno de las celdas */
+  text-align: center;
+  color: #000000; /* Color del texto */
+  font-size: 12px; /* Reducir el tamaño de la fuente */
+
 }
 
 .Auditoria th {
-  background-color: #333; /* Fondo de los encabezados */
+  background-color: #f2f2f2; /* Fondo de los encabezados */
   font-weight: bold;
-  text-transform: uppercase; /* Convertir el texto a mayúsculas */
+  font-size: 12px; /* Reducir el tamaño de la fuente */
 }
 
 .Auditoria td {
-  background-color: #1a1a1a; /* Fondo de las celdas */
+  background-color: #ffffff; /* Fondo de las celdas */
 }
 
 .Auditoria select {
-  padding: 4px;
+  padding: 2px; /* Reducir el relleno del select */
   box-sizing: border-box;
-  width: auto; /* Ajustar ancho según contenido */
-  background-color: #333; /* Fondo del select */
-  color: #ffffff; /* Color del texto del select */
-  border: 1px solid #555; /* Bordes del select */
+  width: 50px; /* Ancho fijo para el select */
+  background-color: #ffffff; /* Fondo del select */
+  color: #000000; /* Color del texto del select */
+  border: 1px solid #ddd; /* Bordes del select */
   border-radius: 4px; /* Bordes redondeados */
+  text-align: center; /* Centrar el texto */
+  font-size: 12px; /* Reducir el tamaño de la fuente */
 }
 
 /* Estilo adicional para mejorar el aspecto general */
 .Auditoria tr:nth-child(even) {
-  background-color: #2c2c2c; /* Fondo alternativo para filas */
+  background-color: #f9f9f9; /* Fondo alternativo para filas */
 }
 
 .Auditoria tr:hover {
-  background-color: #444; /* Fondo al pasar el cursor */
+  background-color: #f1f1f1; /* Fondo al pasar el cursor */
 }
 
 .estadoButton {
-  padding: 4px;
+  padding: 2px; /* Reducir el relleno */
   border: none;
   border-radius: 4px;
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 10px; /* Reducir el tamaño de la fuente */
 }
 
 .aprobado {
@@ -62,4 +71,35 @@
 
 .enProceso {
   background-color: #00BFFF; /* Azul cielo para en proceso */
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px; /* Limitar el ancho del contenedor de nombres */
+  word-wrap: break-word; /* Permitir que el texto se divida en varias líneas */
+}
+
+.selectUnderName {
+  margin-top: 2px; /* Reducir la separación entre el nombre y el select */
+  width: 50px; /* Ancho fijo para el select debajo del nombre */
+  font-size: 12px; /* Reducir el tamaño de la fuente */
+}
+
+.optionSi {
+  background-color: #4CAF50; /* Verde para Sí */
+  color: #ffffff;
+}
+
+.optionNo {
+  background-color: #FF6347; /* Rojo para No */
+  color: #ffffff;
+  font-weight: bold; /* Texto en negrita para No */
+}
+
+/* Ancho fijo para la columna de nombres */
+.Auditoria .nombre-col {
+  width: 150px; /* Ancho fijo para la columna de nombres */
+  max-width: 150px; /* Ancho máximo para la columna de nombres */
+  word-wrap: break-word; /* Permitir que el texto se divida en varias líneas */
 }

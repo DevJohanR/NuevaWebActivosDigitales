@@ -10,7 +10,7 @@ const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/juridicos')
+    axios.get('https://nuevawebactivosdigitales.onrender.com/juridicos')
       .then(response => {
         console.log('Datos Juridicos:', response.data)
         setData(response.data);
@@ -60,7 +60,7 @@ const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
       if(result.dismiss === Swal.DismissReason.cancel){
        console.log('Datos a Enviar --Juridicos:', juridico)
 
-       fetch('http://localhost:3000/api/auditoria-juridicos', {
+       fetch('https://nuevawebactivosdigitales.onrender.com/api/auditoria-juridicos', {
         method: 'POST',
         headers:{
           'Content-Type' :  'application/json'
