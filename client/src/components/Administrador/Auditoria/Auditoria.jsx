@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Auditoria.module.css';
 
-const Auditoria = () => {
+const Auditoria = ({ auditoriaUpdate }) => {
   const [personasAuditadas, setPersonasAuditadas] = useState([]);
   const [juridicosAuditados, setJuridicosAuditados] = useState([]);
 
@@ -20,7 +20,7 @@ const Auditoria = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [auditoriaUpdate]);
 
   // useEffect para Juridicos
   useEffect(() => {
@@ -44,7 +44,7 @@ const Auditoria = () => {
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }, []);
+  }, [auditoriaUpdate]);
 
   // Manejador de actualización para Personas
   const handleVerificationChangePersona = (id, field, value) => {

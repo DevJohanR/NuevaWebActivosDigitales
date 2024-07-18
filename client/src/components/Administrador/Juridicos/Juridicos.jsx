@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { FaInfoCircle } from 'react-icons/fa';
 import styles from './Juridicos.module.css';
 
-const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
+const Juridicos = ({ setSelectedJuridico, searchTerm, onAuditar }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -67,14 +67,15 @@ const Juridicos = ({ setSelectedJuridico, searchTerm }) => {
         },
         body: JSON.stringify(juridico)
        })
-       .then(response=>response.json())
-       .then(data =>{
-        console.log('Exito', data)
-       })
-       .catch((error)=>{
-        console.error('Error, error')
-       })
-      }
+       .then(response => response.json())
+    .then(data => {
+      console.log('Exito', data);
+      onAuditar(); // Llama al callback para actualizar Auditoria
+    })
+    .catch((error)=>{
+      console.error('Error, error');
+    });
+  };
     });
   };
 

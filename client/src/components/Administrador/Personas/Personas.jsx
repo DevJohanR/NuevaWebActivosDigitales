@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { FaInfoCircle } from 'react-icons/fa';
 import styles from './Personas.module.css';
 
-const Personas = ({ setSelectedUser, searchTerm }) => {
+const Personas = ({ setSelectedUser, searchTerm, onAuditar }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -64,14 +64,15 @@ const Personas = ({ setSelectedUser, searchTerm }) => {
           },
           body: JSON.stringify(persona)
         })
-        .then(response=>response.json())
-        .then(data =>{
-          console.log('Exito', data);
-        })
-        .catch((error)=>{
-          console.error('Error', error)
-        })
-      }
+        .then(response => response.json())
+    .then(data => {
+      console.log('Exito', data);
+      onAuditar(); // Llama al callback para actualizar Auditoria
+    })
+    .catch((error) => {
+      console.error('Error', error);
+    });
+  };
     })
   };
 

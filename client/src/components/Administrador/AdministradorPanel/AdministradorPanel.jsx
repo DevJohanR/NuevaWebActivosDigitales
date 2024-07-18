@@ -8,10 +8,14 @@ const AdministradorPanel = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedUser, setSelectedUser] = useState(null);
     const [selectedJuridico, setSelectedJuridico] = useState(null);
-
+    const [auditoriaUpdate, setAuditoriaUpdate] = useState(false);
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
+    };
+
+    const handleAuditoriaUpdate = () => {
+        setAuditoriaUpdate(prev => !prev); // Toggle state to trigger re-render in Auditoria
     };
 
     return (
@@ -24,11 +28,11 @@ const AdministradorPanel = () => {
                 className={styles.searchBar}
             />
             <div className={styles.resultsContainer}>
-                <Personas searchTerm={searchTerm} setSelectedUser={setSelectedUser} />
-                <Juridicos searchTerm={searchTerm} setSelectedJuridico={setSelectedJuridico} />
+                <Personas searchTerm={searchTerm} setSelectedUser={setSelectedUser} onAuditar={handleAuditoriaUpdate} />
+                <Juridicos searchTerm={searchTerm} setSelectedJuridico={setSelectedJuridico} onAuditar={handleAuditoriaUpdate} />
             </div>
             
-            <Auditoria selectedUser={selectedUser} selectedJuridico={selectedJuridico} />
+            <Auditoria selectedUser={selectedUser} selectedJuridico={selectedJuridico} auditoriaUpdate={auditoriaUpdate} />
         </div>
     );
 }
