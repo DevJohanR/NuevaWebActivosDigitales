@@ -1,8 +1,9 @@
+/* Estilos generales */
 .Auditoria {
-  padding: 10px; /* Reducir el relleno general */
+  padding: 10px;
 }
 
-.Auditoria h1{
+.Auditoria h1 {
   font-size: 40px;
 }
 
@@ -11,95 +12,172 @@
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #ffffff; /* Fondo de la tabla */
-  table-layout: fixed; /* Ancho fijo para las columnas */
+  background-color: #ffffff;
+  table-layout: fixed; /* Mantener las columnas con un ancho fijo */
 }
 
 .Auditoria th, .Auditoria td {
   border: 1px solid #ddd;
-  padding: 10px; /* Reducir el relleno de las celdas */
+  padding: 10px;
   text-align: center;
-  color: #000000; /* Color del texto */
-  font-size: 12px; /* Reducir el tamaño de la fuente */
-
+  color: #000000;
+  font-size: 12px;
 }
 
 .Auditoria th {
-  background-color: #f2f2f2; /* Fondo de los encabezados */
+  background-color: #f2f2f2;
   font-weight: bold;
-  font-size: 12px; /* Reducir el tamaño de la fuente */
 }
 
 .Auditoria td {
-  background-color: #ffffff; /* Fondo de las celdas */
+  background-color: #ffffff;
 }
 
 .Auditoria select {
-  padding: 2px; /* Reducir el relleno del select */
+  padding: 2px;
   box-sizing: border-box;
-  width: 50px; /* Ancho fijo para el select */
-  background-color: #ffffff; /* Fondo del select */
-  color: #000000; /* Color del texto del select */
-  border: 1px solid #ddd; /* Bordes del select */
-  border-radius: 4px; /* Bordes redondeados */
-  text-align: center; /* Centrar el texto */
-  font-size: 12px; /* Reducir el tamaño de la fuente */
+  width: 50px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 12px;
 }
 
-/* Estilo adicional para mejorar el aspecto general */
 .Auditoria tr:nth-child(even) {
-  background-color: #f9f9f9; /* Fondo alternativo para filas */
+  background-color: #f9f9f9;
 }
 
 .Auditoria tr:hover {
-  background-color: #f1f1f1; /* Fondo al pasar el cursor */
+  background-color: #f1f1f1;
 }
 
+/* Estilos para los botones de estado */
 .estadoButton {
-  padding: 2px; /* Reducir el relleno */
+  padding: 5px;
   border: none;
   border-radius: 4px;
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
-  font-size: 10px; /* Reducir el tamaño de la fuente */
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px; /* Ajustar el ancho del botón */
+  height: 25px; /* Ajustar la altura del botón */
+  margin: 0 auto; /* Centrar el botón horizontalmente */
 }
 
 .aprobado {
-  background-color: #4CAF50; /* Verde para aprobado */
+  background-color: #4CAF50;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 .enProceso {
-  background-color: #00BFFF; /* Azul cielo para en proceso */
+  background-color: #FFD700; /* Amarillo para en proceso */
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000000;
+}
+
+.rechazado {
+  background-color: #FF0000; /* Rojo para rechazado */
+  color: #ffffff;
+}
+
+.icono {
+  font-size: 12px;
+  margin-right: 3px;
 }
 
 .nameContainer {
   display: flex;
   flex-direction: column;
-  max-width: 150px; /* Limitar el ancho del contenedor de nombres */
-  word-wrap: break-word; /* Permitir que el texto se divida en varias líneas */
+  max-width: 150px;
+  word-wrap: break-word;
 }
 
 .selectUnderName {
-  margin-top: 2px; /* Reducir la separación entre el nombre y el select */
-  width: 50px; /* Ancho fijo para el select debajo del nombre */
-  font-size: 12px; /* Reducir el tamaño de la fuente */
+  margin-top: 2px;
+  width: 50px;
+  font-size: 12px;
 }
 
 .optionSi {
-  background-color: #4CAF50; /* Verde para Sí */
+  background-color: #4CAF50;
   color: #ffffff;
 }
 
 .optionNo {
-  background-color: #FF6347; /* Rojo para No */
+  background-color: #FF6347;
   color: #ffffff;
-  font-weight: bold; /* Texto en negrita para No */
+  font-weight: bold;
 }
 
-/* Ancho fijo para la columna de nombres */
 .Auditoria .nombre-col {
-  width: 150px; /* Ancho fijo para la columna de nombres */
-  max-width: 150px; /* Ancho máximo para la columna de nombres */
-  word-wrap: break-word; /* Permitir que el texto se divida en varias líneas */
+  width: 150px;
+  max-width: 150px;
+  word-wrap: break-word;
+}
+
+/* Estilo para la palabra "Rechazar" */
+.rechazarButton {
+  font-style: italic;
+  text-decoration: underline;
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+/* CSS específico para Auditoria Jurídicos */
+.AuditoriaJuridicos table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  table-layout: auto;
+}
+
+.AuditoriaJuridicos th, .AuditoriaJuridicos td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  color: #000000;
+  font-size: 10px;
+}
+
+.AuditoriaJuridicos th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.AuditoriaJuridicos .estadoButton {
+  width: 35px; /* Ajustar el ancho del botón para ser más pequeño */
+  height: 25px;
+  margin: 0 auto; /* Centrar el botón horizontalmente */
+}
+
+.AuditoriaJuridicos .icono {
+  font-size: 12px;
+}
+
+.AuditoriaJuridicos .nameContainer {
+  max-width: 120px;
+}
+
+.AuditoriaJuridicos .selectUnderName {
+  width: 45px;
+  font-size: 10px;
+}
+
+/* Ajuste específico para la columna de estado */
+.AuditoriaJuridicos td.estado-col {
+  width: 1%; /* Asegura que la columna tome solo el espacio necesario */
+  white-space: nowrap; /* Evita que el contenido haga saltos de línea */
+  padding: 0; /* Eliminar el relleno para reducir el ancho */
 }

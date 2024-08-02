@@ -1,3 +1,9 @@
+.advertencia{
+    font-size: 13px;
+    font-style: italic;
+    color: red;
+}
+
 .idiomas {
     width: 300px;
     display: flex;
@@ -78,9 +84,13 @@ form {
 }
 
 .uploadField label {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 16px; /* Tamaño de la fuente para claridad */
+    font-weight: bold; /* Negrita para resaltar */
+    width: 100%; /* Hace el label del mismo ancho que el contenedor */
+    padding-bottom: 5px; /* Espacio adicional debajo del label para separarlo del botón */
+    display: block; /* Asegura que el label tome su propia línea */
 }
+
 
 .uploadField button {
     background-color: white;

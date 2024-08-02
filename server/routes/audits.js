@@ -239,6 +239,85 @@ router.get('/auditoria-juridicos', async (req, res) => {
 
 
 
+router.put('/rechazar-persona/:id', async (req, res) => {
+
+    console.log(`Received request to reject juridico with ID: ${req.params.id}`);
+   
+  const { id } = req.params;
+  const { causaRechazo } = req.body;
+
+  // Validación básica
+  if (!id || isNaN(id)) {
+    return res.status(400).json({ message: 'ID inválido' });
+  }
+  if (!causaRechazo || typeof causaRechazo !== 'string') {
+    return res.status(400).json({ message: 'Causa de rechazo inválida' });
+  }
+
+  try {
+    // Consulta para actualizar el juridico
+    const [result] = await pool.query(
+      'UPDATE audit_personas SET rechazado = ?, causaRechazo = ? WHERE id = ?',
+      [true, causaRechazo, id]
+    );
+
+    // Verificar si el juridico fue encontrado y actualizado
+    if (result.affectedRows > 0) {
+      return res.status(200).json({ message: 'Rechazo actualizado correctamente.' });
+    } else {
+      return res.status(404).json({ message: 'Persona jurídica no encontrada.' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar el estado de rechazo:', error);
+
+    // Respuesta más clara en caso de error
+    return res.status(500).json({ 
+      message: 'Error interno del servidor', 
+      error: error.message 
+    });
+  }
+});
+
+// Ruta para manejar el rechazo de una entidad jurídica
+router.put('/rechazar-juridico/:id', async (req, res) => {
+  console.log(`Received request to reject juridico with ID: ${req.params.id}`);
+  
+  const { id } = req.params;
+  const { causaRechazo } = req.body;
+
+  // Validación básica
+  if (!id || isNaN(id)) {
+    return res.status(400).json({ message: 'ID inválido' });
+  }
+  if (!causaRechazo || typeof causaRechazo !== 'string') {
+    return res.status(400).json({ message: 'Causa de rechazo inválida' });
+  }
+
+  try {
+    // Consulta para actualizar el estado de rechazo
+    const [result] = await pool.query(
+      'UPDATE audit_juridicos SET rechazado = ?, causaRechazo = ? WHERE id = ?',
+      [true, causaRechazo, id]
+    );
+
+    // Verificar si la entidad jurídica fue encontrada y actualizada
+    if (result.affectedRows > 0) {
+      return res.status(200).json({ message: 'Rechazo actualizado correctamente.' });
+    } else {
+      return res.status(404).json({ message: 'Entidad jurídica no encontrada.' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar el estado de rechazo:', error);
+
+    // Respuesta más clara en caso de error
+    return res.status(500).json({ 
+      message: 'Error interno del servidor', 
+      error: error.message 
+    });
+  }
+});
+
+
 
 
 module.exports = router;
