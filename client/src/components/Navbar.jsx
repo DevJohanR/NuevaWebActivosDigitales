@@ -120,9 +120,9 @@ const Navbar = () => {
     },
     
     
-    "Contacto": { 
-      path: "https://wa.link/tsh6bx", 
-      external: true
+    "Política de Datos": { 
+      path: "/tratamiento-de-datos.pdf",  
+      external: true 
     },
   
     "Preguntas Frecuentes": { path: "/preguntas", external: false },
