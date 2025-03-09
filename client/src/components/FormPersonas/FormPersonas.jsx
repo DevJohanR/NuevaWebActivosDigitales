@@ -139,12 +139,26 @@ const FormPersonas = () => {
     };
 
     const handleChange = (e) => {
-        const { name, type, value, files } = e.target;
+        const { name, type, files } = e.target;
+        const file = files ? files[0] : null;
+    
         setPost(prevState => ({
             ...prevState,
-            [name]: type === 'file' ? files[0] : value
+            [name]: type === 'file' ? file : e.target.value
         }));
+    
+        if (file) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Archivo seleccionado',
+                text: `Has seleccionado: ${file.name}`,
+                timer: 2000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            });
+        }
     };
+    
 
     const handleFileClick = (field) => {
         document.getElementById(field).click();
